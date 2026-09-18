@@ -42,6 +42,12 @@ class store:
     def DisplayProduct(self):
         pass
 
+    def Search_Product():
+        pass
+
+    def DisplaySales():
+        pass
+
    
 
 
