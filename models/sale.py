@@ -67,8 +67,4 @@ my_sale = sale()
 my_sale.create_saleitem()
 my_sale.display_sale()
 
-
-        
-
-
-        
+  
