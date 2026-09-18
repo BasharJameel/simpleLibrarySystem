@@ -59,3 +59,4 @@ class Product:
         print("Description:", self.description)
         print("Category:", self.category)
         print("Status:", self.status)
+        
