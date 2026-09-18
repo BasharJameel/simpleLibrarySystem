@@ -1,6 +1,8 @@
 class Product:
+    counter=1
     def __init__(self,product_id , name , price, category,description , status ):
-        self.product_id=product_id
+        self.product_id=Product.counter
+        Product.counter+=1
         self.name= name 
         self.price = price
         self.category=category
@@ -59,4 +61,3 @@ class Product:
         print("Description:", self.description)
         print("Category:", self.category)
         print("Status:", self.status)
-        
