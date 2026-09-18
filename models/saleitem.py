@@ -1,5 +1,5 @@
 class saleitem:
-    def __init__(self,product,quantity,price_unit): 
+    def __init__(self,product,quantity,price_unit=0): 
         self.product=product
         self.quantity=quantity
         self.price_unit=price_unit

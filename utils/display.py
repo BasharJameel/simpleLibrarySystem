@@ -22,19 +22,6 @@ def PrintMainMenu():
     print("7. Exit")
 
 
-def PrintMainMenu():
-    print("=====================================")
-    print("             Main Menu               ")
-    print("=====================================")
-    print("1. Products")
-    print("2. Categories")
-    print("3. Employee")
-    print("4. Inventory")
-    print("5. Sales")
-    print("6. Reports")
-    print("7. Exit")
-
-
 def PrintProductMenu():
     print("=====================================")
     print("           Product Menu              ")

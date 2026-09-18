@@ -1,4 +1,4 @@
-from saleitem import saleitem
+from models.saleitem import saleitem
 from datetime import date
 class sale:
     counter=1
@@ -46,14 +46,11 @@ class sale:
 
     def create_saleitem(self):
         while True:
-            product_id=int(input("enter the product id:\n"))
+            product_id=input("enter the product id:\n")
             quantity=int(input("enter the quantity\n"))
+            price_unit=float(input("enter the price per unit:\n"))
 
-            ###كود ايجاد الproduct
-            #كود التحقق من الكميه
-            
-            #تضمين سعر القطعه في price_unit
-            item =saleitem(product_id,quantity)#price_unit
+            item =saleitem(product_id,quantity,price_unit)
             self.add_item(item)
 
             repeat=input("do you want to add another item:")
@@ -63,8 +60,5 @@ class sale:
                 break
 
 
-my_sale = sale()
-my_sale.create_saleitem()
-my_sale.display_sale()
 
   

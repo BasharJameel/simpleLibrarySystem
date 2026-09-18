@@ -1,14 +1,10 @@
-from models import employee
-from models import store
+from models.employee import Employee
 
-employee=employee.employees()
 def SaveEmployee(employees):
-    file=open("data\employees.txt","w")
-    
-    for employee in BasharLibrary.employee:
-        file.write(f"|{employee.employee_id}|{employee.name}|{employee.phone}|{employee.salary}\n")
-        
-    file.close()
+    with open("data/employees.txt", "w") as file:
+        for employee in employees:
+            file.write(f"|{employee.employee_id}|{employee.name}|{employee.phone}|{employee.salary}\n")
+
 
 
     
