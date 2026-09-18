@@ -12,7 +12,11 @@ class payment:
     def  process_payment(self,total):
         
         
-        self.amount=int(input("enter the monay the customer give:"))
+        try:
+            self.amount=int(input("enter the monay the customer give:"))
+        except ValueError:
+            print("Invalid amount")
+            return
            
         if self.amount<total:
             still=total-self.amount
@@ -27,18 +31,17 @@ class payment:
         else:
             print("DONE")
 
+        self.method=input("enter the way the customer give you the mony:")
 
-            self.method=input("enter the way the customer give you the mony:")
-
-            print(f"amount:{self.total}")
-            print(f"method:{self.method}")
+        print(f"amount:{total}")
+        print(f"method:{self.method}")
 
 
 
     def display_payment(self):
         print(f"payment_id:{self.payment_id}")
         print(f"amount:{self.amount}")
-        print(f"method{self.method}")
+        print(f"method:{self.method}")
         print(f"date:{self.date}")
         
 

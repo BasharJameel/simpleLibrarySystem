@@ -1,5 +1,6 @@
-from models import sale
-from models import employee
+from models.sale import sale
+from models.employee import Employee
+from models.saleitem import saleitem
 
 class store:
 
@@ -7,38 +8,38 @@ class store:
         self.name=name
         self.Category=[]
         self.product=[]
-        self.employee=[]
+        self.Employee=[]
         self.sales= []
-        employeeCount=0
-        ProductCount=0
-        SalasProduct=0
+        self.EmployeeCount=0
+        self.ProductCount=0
+        self.SalasProduct=0
 
-    def AddEmployee(self, employee_id, name, jobs, phone, salary):
+    def AddEmployee(self, Employee_id, name, jobs, phone, salary):
 
          if (jobs == 'Manager'):
-            self.employee[employee_Count]=employee.Manager(employee_id, name, jobs, phone, salary)
+            self.Employee.append(Employee.Manager(Employee_id, name, jobs, phone, salary))
          elif (jobs == 'cashier'):
-            self.employee[employee_Count]=employee.Cashier(employee_id, name, jobs, phone, salary)
+            self.Employee.append(Employee.Cashier(Employee_id, name, jobs, phone, salary))
          elif (jobs == 'storekeeper'):
-            self.employee[employee_Count]=employee.Storekeeper(employee_id, name, jobs, phone, salary)
+            self.Employee.append(Employee.Storekeeper(Employee_id, name, jobs, phone, salary))
 
-         employee_Count+=1 
+         self.EmployeeCount+=1 
 
 
      
-    def AddProduct(self, ID, Name, Price, Categories, Description, Status ):
-        self.Product[ProductCount]=Product( ID, Name, Price, Categories, Description, Status )
-        ProductCount+=1
+    #def AddProduct(self, ID, Name, Price, Categories, Description, Status ):
+     #   self.Product[ProductCount]=Product( ID, Name, Price, Categories, Description, Status )
+      #  ProductCount+=1
 
-    def CreatSale(self, employee, payment):
+    def CreatSale(self, Employee, payment):
 
-        self.sales[SalasProduct]=sale.sale(employee, payment)
-        SalasProduct+=1
+        self.sales.append(sale(Employee, payment))
+        self.SalasProduct+=1
 
     def AddCategory(self):
         pass
 
-    def DisplayProduct():
+    def DisplayProduct(self):
         pass
 
    
