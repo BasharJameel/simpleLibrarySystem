@@ -1,5 +1,21 @@
 import tkinter as tk
 
+
+def SaveProduct():
+        id=idText.get()
+        name=nameText.get()
+        price=PriceText.get()
+        Catgories=CatgoriesText.get()
+        Description=DescriptionText.get()
+        Status=StatusText.get()
+
+        idText.delete(0, tk.END)
+        nameText.delete(0, tk.END)
+        PriceText.delete(0, tk.END)
+        CatgoriesText.delete(0, tk.END)
+        DescriptionText.delete(0, tk.END)
+        StatusText.delete(0, tk.END)
+
 if (1):
     root=tk.Tk()
     root.geometry("800x500")
@@ -52,28 +68,13 @@ if (1):
 
 
 
-    SaveButton= tk.Button(root, text="save", width=10,height=1)
+    SaveButton= tk.Button(root, text="save", width=10,height=1,command=SaveProduct)
     SaveButton.grid(row=4, column=0,columnspan=5,pady=50)
 
 
 
 
-    def SaveProduct():
-        id=idText.get()
-        name=nameText.get()
-        price=PriceText.get()
-        Catgories=CatgoriesText.get()
-        Description=DescriptionText.get()
-        Status=StatusText.get()
-
-
-
-        idText.delete(0, tk.END)
-        nameText.delete(0, tk.END)
-        priceText.delete(0, tk.END)
-        categoriesText.delete(0, tk.END)
-        descriptionText.delete(0, tk.END)
-        statusText.delete(0, tk.END)
+    
 
 
     root.mainloop()
