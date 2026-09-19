@@ -1,3 +1,4 @@
+from datetime import date
 class payment:
     counter=192168
     def __init__(self,amount,method):
@@ -5,7 +6,7 @@ class payment:
         payment.counter+=10
         self.amount=amount
         self.method=method
-        
+        self.date=date.today()
 
 
     def  process_payment(self,total):
@@ -41,7 +42,7 @@ class payment:
         print(f"payment_id:{self.payment_id}")
         print(f"amount:{self.amount}")
         print(f"method:{self.method}")
-        
+        print(f"date:{self.date}")
         
 
 

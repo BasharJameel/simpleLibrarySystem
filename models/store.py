@@ -5,12 +5,9 @@ from models.category import Category
 
 from models.product import *
 
-<<<<<<< HEAD
-=======
 from models.product import Product
 from models.payment import *
 
->>>>>>> 9d1503aa99fb630739ad90b6b7ef8f73e29cf0c7
 
 class Store:
 
@@ -40,11 +37,10 @@ class Store:
      
 
     def CreatSale(self, Employee, payment):
-        sale =sale(Employee,payment)
+        self.sales.append(sale(Employee,payment))
 
-        sale.create_saleitem()
-
-        process_payment(sale.calculate_total())
+        self.sales.create_saleitem()
+        process_payment(self.sales.calculate_total())
 
 
         
@@ -53,18 +49,15 @@ class Store:
         self.sales.append(sale(Employee))
       
 
-    def AddCategory(self,description):
-        print("="*10)
-        category_id=input("Enter Categorey ID ")
-        name=input("Enter Categorey Name")
-        description=input("Enter Categorey Descriiption")
+    def AddCategory(self,category_id,name,description):
+
         self.Category.append(Category(category_id,name,description))
 
         
 
-    def DisplayProductByCategory(self):
+    def DisplayProduct(self):
          print("--------------------------------------")
-         print("      Product List  ByCategory              ")
+         print("          Product List                ")
          print("--------------------------------------")
          
          for Cate in self.Category:
@@ -76,35 +69,22 @@ class Store:
              if (product.category == Cate):
                   print(f"-{product.name}")
         
-    def DisplayProduct(self):
-         print("--------------------------------------")
-         print("          Product List                ")
-         print("--------------------------------------")
-         
-         for product in self.products:
-          print(f"-{product.name}")
-        
 
           
-    def SearchProduct(self):
-       
-        SearchedProduct=input("Enter  Product ID That you wante to Search aboute")
+    def SearchProduct(self,SearchedProduct):
         for product in self.products:
           
             if (product.id==SearchedProduct):
                 product.display_info()
 
     def SearchEmployee(self,SearchedEmployee):
-        SearchedEmployee=input("Enter  Employee ID That you wante to Search aboute")
-
-        for Employee in self.Employees:
+        for product in self.products:
           
-            if (Employee.id==SearchedEmployee):
+            if (product.id==SearchedProduct):
                 product.display_info()
 
     def DisplaySales(self,SearchSale):
-        SearchSale=input("Enter  Salae ID That you wante to Delete it")
-
-        for Sales in self.sales:
+         for Sales in self.sales:
+          
             if (Sales.id==SearchSale):
                 Sales.display_sale()

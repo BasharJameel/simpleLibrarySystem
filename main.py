@@ -6,7 +6,7 @@ from GUI.CreateAnewProducteInterface import *
 from models.employee import *
 import os
 from models.payment import *
-
+from models.inventory import Inventory
 
 <<<<<<< HEAD
 # def employee_enter(Library):
@@ -51,6 +51,11 @@ def main():
     LoadProduct(Library)
     # employee_enter(Library)
     
+    # إنشاء مخزن فارغ
+    inventory1 = Inventory({})
+
+    print("Inventory ID:", inventory1.inventory_id)
+    print("Stock:", inventory1.products_stock)
     
     def products_process():
 
