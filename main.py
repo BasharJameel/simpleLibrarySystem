@@ -28,7 +28,7 @@ def main():
 
     #              else:print("you are not in the system")
 
-    # name=employee_enter()
+    #name=employee_enter()
     
    
     Library=Store("basharstore")
@@ -72,9 +72,10 @@ def main():
                     os.system("cls")
                     main_project()            
                     break
-                case _:print("out of the scope,please try againe:")
-            print("----------------------------\n")
-            choice=int(input("enter another choice:"))
+                case _:
+                    print("out of the scope,please try againe:")
+                    print("----------------------------\n")
+                    choice=int(input("enter another choice:"))
             
 
 
@@ -214,6 +215,7 @@ def main():
     
 
 if __name__ == "__main__":
+
     main()
 
 
