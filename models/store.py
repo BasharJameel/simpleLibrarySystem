@@ -1,14 +1,15 @@
 from models.sale import sale
 from models.employee import Employee
 from models.saleitem import saleitem
+from models.category import Category
 
 class store:
 
     def __init__(self,name):
         self.name=name
         self.Category=[]
-        self.product=[]
-        self.Employee=[]
+        self.products=[]
+        self.Employees=[]
         self.sales= []
         self.EmployeeCount=0
         self.ProductCount=0
@@ -17,46 +18,53 @@ class store:
     def AddEmployee(self, Employee_id, name, jobs, phone, salary):
 
          if (jobs == 'Manager'):
-            self.Employee.append(Employee.Manager(Employee_id, name, jobs, phone, salary))
+            self.Employees.append(Employee.Manager(Employee_id, name, jobs, phone, salary))
          elif (jobs == 'cashier'):
-            self.Employee.append(Employee.Cashier(Employee_id, name, jobs, phone, salary))
+            self.Employees.append(Employee.Cashier(Employee_id, name, jobs, phone, salary))
          elif (jobs == 'storekeeper'):
-            self.Employee.append(Employee.Storekeeper(Employee_id, name, jobs, phone, salary))
-
-         self.EmployeeCount+=1 
+            self.Employees.append(Employee.Storekeeper(Employee_id, name, jobs, phone, salary))
 
 
      
     def AddProduct(self, ID, Name, Price, Categories, Description, Status ):
-       self.Product.append(Product( ID, Name, Price, Categories, Description, Status ))
+       self.Products.append(Product( ID, Name, Price, Categories, Description, Status ))
      
 
     def CreatSale(self, Employee, payment):
 
         self.sales.append(sale(Employee, payment))
-        self.SalasProduct+=1
+      
 
-    def AddCategory(self):
-        pass
+    def AddCategory(self,category_id,name,description):
+
+        self.Category.append(Category(category_id,name,description))
+
+        
 
     def DisplayProduct(self):
-        pass
+         print("--------------------------------------")
+         print("          Product List                ")
+         print("--------------------------------------")
+         
+         for Cate in self.Category:
+         
+           pritn(f"----{Cate}----")
+  
+           for product in self.products:
+           
+             if (product.category == Cate):
+                  print(f"-{product.name}")
+        
 
-    def Search_Product():
-        pass
+          
+    def Search_Product(self,SearchedProduct):
+        for product in self.products:
+          
+            if (product.id==SearchedProduct):
+                product.display_info()
 
-    def DisplaySales():
-        pass
-
-   
-
-
-
-
-    
-
-
-
-
-    
-
+    def DisplaySales(self,SearchSale):
+         for Sales in self.sales:
+          
+            if (Sales.id==SearchSale):
+                Sales.display_sale()

@@ -7,10 +7,10 @@ class sale:
         self.sale_id=sale.counter
         sale.counter+=1
         self.date=date.today()
-        self.employee=employee#add the متغير from main 
+        self.employee=employee#add the متغير from main ||||this must be a obj
         self.total=0
         self.items=[]
-        self.payment=payment
+        self.payment=payment   #%***% is Ammar make this a objct
 
     
     def add_item(self,item):
@@ -47,7 +47,7 @@ class sale:
 
     def create_saleitem(self):
         while True:
-            product_id=input("enter the product id:\n")
+            product_id=input("enter the product id:\n")#we can develop this part by make the parmete is OBj
             quantity=int(input("enter the quantity\n"))
             
             price_unit=float(input("enter the price perice unit:\n"))
