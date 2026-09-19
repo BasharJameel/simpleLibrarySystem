@@ -18,3 +18,5 @@ class Category:
         print("Category Name: ",self.name)
         print("Category description: ",self.description)
         print("Category products: ",self.products)
+        
+    

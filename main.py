@@ -1,16 +1,35 @@
+from utils.display import PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
+from models.store import store
 from utils.display import PrintEmployeeDisplayHeader, PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
 from models.store import *
 from utils.helpers import *
 from GUI.CreateAnewProducteInterface import *
 from models.employee import *
 import os
+
+
+def employee_enter(Library):
+    while True:
+            employee_name=input("enter your name :")
+            for em in Library.products:
+                 if employee_name==em.name:
+                    print(f"hi? {employee_name}")
+                    return employee_name
+
+                 else:print("you are not in the system")
+                 
+
+            
+    
+name=employee_enter()
 def main():
     #ask to enter the name of employee and check from file of employee 
     #store it in متغير to add it in saleitem and sale
     
+   
     Library=Store("basharstore")
-
     LoadProduct(Library)
+    employee_enter(Library)
     
     
     def products_process():

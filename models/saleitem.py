@@ -10,12 +10,7 @@ class saleitem:
         return self.subtotal
 
     def display_item(self):
-        print(f"product:{self.product}" )
-        print(f" quantity:{self.quantity} ")
-        print(f"price: {self.price_unit} ")
-        print("===============total price=================")
-        print(f"total price: {self.calculate_subtotal()}")
-        print("===============total price=================")
-
+        print(f"product:{self.product} |quantity:{self.quantity} | price: {self.price_unit} ||total price: {self.calculate_subtotal()}" )
+ 
 
 

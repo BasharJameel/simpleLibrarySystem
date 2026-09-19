@@ -2,7 +2,12 @@ from models.sale import sale
 from models.employee import Employee
 from models.saleitem import saleitem
 from models.category import Category
+<<<<<<< HEAD
 from models.product import *
+=======
+from models.product import Product
+from models.payment import payment,process_payment
+>>>>>>> da30358a2bf897867424ad5f799d39035559e8cc
 
 class Store:
 
@@ -32,8 +37,16 @@ class Store:
      
 
     def CreatSale(self, Employee, payment):
+        self.sales.append(sale(Employee,payment))
 
-        self.sales.append(sale(Employee, payment))
+        self.sales.create_saleitem()
+        process_payment(self.sales.calculate_total())
+
+
+        
+        
+
+        self.sales.append(sale(Employee))
       
 
     def AddCategory(self,category_id,name,description):
@@ -49,7 +62,7 @@ class Store:
          
          for Cate in self.Category:
          
-           pritn(f"----{Cate}----")
+           print(f"----{Cate}----")
   
            for product in self.products:
            
