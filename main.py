@@ -1,11 +1,13 @@
 from utils.display import PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
 from models.store import store
-
+from utils.helpers import *
 def main():
     #ask to enter the name of employee and check from file of employee 
     #store it in متغير to add it in saleitem and sale
     
     Library = store("bashar store")
+
+    LoadProduct(Library)
     
     
     
@@ -74,6 +76,7 @@ def main():
                 case 2:
                    pass
                    break
+                
                 case 3:
                     pass
                     break

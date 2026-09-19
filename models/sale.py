@@ -1,4 +1,4 @@
-from product import Product
+from models.product import Product
 from models.saleitem import saleitem
 from datetime import date
 class sale:

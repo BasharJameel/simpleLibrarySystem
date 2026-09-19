@@ -27,9 +27,9 @@ class store:
 
 
      
-    #def AddProduct(self, ID, Name, Price, Categories, Description, Status ):
-     #   self.Product[ProductCount]=Product( ID, Name, Price, Categories, Description, Status )
-      #  ProductCount+=1
+    def AddProduct(self, ID, Name, Price, Categories, Description, Status ):
+       self.Product[ProductCount]=Product( ID, Name, Price, Categories, Description, Status )
+       ProductCount+=1
 
     def CreatSale(self, Employee, payment):
 
