@@ -1,3 +1,4 @@
+from models.product import Product
 from models.saleitem import saleitem
 from datetime import date
 class sale:
@@ -6,10 +7,10 @@ class sale:
         self.sale_id=sale.counter
         sale.counter+=1
         self.date=date.today()
-        self.employee=employee
+        self.employee=employee#add the متغير from main ||||this must be a obj
         self.total=0
         self.items=[]
-        self.payment=payment
+        self.payment=payment   #%***% is Ammar make this a objct
 
     
     def add_item(self,item):
@@ -34,7 +35,7 @@ class sale:
     def display_sale(self):
         print(f"sale_id:{self.sale_id}")
         print(f"date:{self.date}")
-        print(f"employee:")
+        print(f"employee:")#enter the name of employee from main
         print("---------------------------------------------")
         for i, item in enumerate(self.items, start=1):
             print(f"{i}. ", end="")
@@ -46,11 +47,12 @@ class sale:
 
     def create_saleitem(self):
         while True:
-            product_id=input("enter the product id:\n")
+            product_id=input("enter the product id:\n")#we can develop this part by make the parmete is OBj
             quantity=int(input("enter the quantity\n"))
-            price_unit=float(input("enter the price per unit:\n"))
-
-            item =saleitem(product_id,quantity,price_unit)
+            
+            price_unit=float(input("enter the price perice unit:\n"))
+            total_item=saleitem.calculate_subtotal()
+            item =saleitem(product_id,quantity,price_unit,total_item)
             self.add_item(item)
 
             repeat=input("do you want to add another item:")

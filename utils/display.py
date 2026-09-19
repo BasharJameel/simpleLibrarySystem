@@ -107,6 +107,14 @@ def PrintPaymentMenu():
     print("2. Card")
     print("3. Back")
 
+def PrintEmployeeDisplayHeader(Employees):
+    
+    
+    print("=====================================")
+    print("     Employees List             ")
+    print("=====================================")
+    for Employee in Employees:
+        print(F"-{Employee.name}")
 
 
 def PrintGoodbye():
