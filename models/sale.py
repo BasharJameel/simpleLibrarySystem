@@ -5,14 +5,14 @@ from models.payment import payment
 from datetime import date
 class sale:
     counter=1
-    def __init__(self,employee):
+    def __init__(self,employee,payment):
         self.sale_id=sale.counter
         sale.counter+=1
         self.date=date.today()
         self.employee=employee#add the متغير from main ||||this must be a obj
         self.total=0
         self.items=[]
-        self.payment=payment   #%***% is Ammar make this a objct
+          #%***% is Ammar make this a objct
 
     
     def add_item(self,item):
@@ -46,7 +46,7 @@ class sale:
         print(f"total  of sale:{self.calculate_total()}")
 
         print("$$$$$$$$$$$$$$..PAYMENT..$$$$$$$$$$$$$$$$$$")
-        payment.display_payment()
+        self.payment.display_payment()
         print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         
         
@@ -56,9 +56,8 @@ class sale:
             product_id=input("enter the product id:\n")#we can develop this part by make the parmete is OBj
             quantity=int(input("enter the quantity\n"))
             
-            price_unit=float(input("enter the price perice unit:\n"))
             total_item=saleitem.calculate_subtotal()
-            item =saleitem(product_id,quantity,price_unit,total_item)
+            item =saleitem(product_id,quantity,total_item)
             self.add_item(item)
 
             repeat=input("do you want to add another item:")

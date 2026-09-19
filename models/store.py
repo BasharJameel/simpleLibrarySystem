@@ -3,6 +3,7 @@ from models.employee import Employee
 from models.saleitem import saleitem
 from models.category import Category
 from models.product import Product
+from models.payment import payment,process_payment
 
 class Store:
 
@@ -32,6 +33,14 @@ class Store:
      
 
     def CreatSale(self, Employee, payment):
+        self.sales.append(sale(Employee,payment))
+
+        self.sales.create_saleitem()
+        process_payment(self.sales.calculate_total())
+
+
+        
+        
 
         self.sales.append(sale(Employee))
       
