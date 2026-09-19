@@ -5,6 +5,12 @@ from models.category import Category
 
 from models.product import *
 
+<<<<<<< HEAD
+=======
+from models.product import Product
+from models.payment import *
+
+>>>>>>> 9d1503aa99fb630739ad90b6b7ef8f73e29cf0c7
 
 class Store:
 

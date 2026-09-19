@@ -49,13 +49,13 @@ class sale:
         self.payment.display_payment()
         print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         
-        
+
+      
 
     def create_saleitem(self):
         while True:
             product_id=input("enter the product id:\n")#we can develop this part by make the parmete is OBj
             quantity=int(input("enter the quantity\n"))
-            
             total_item=saleitem.calculate_subtotal()
             item =saleitem(product_id,quantity,total_item)
             self.add_item(item)

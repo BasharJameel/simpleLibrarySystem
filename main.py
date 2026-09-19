@@ -5,8 +5,10 @@ from utils.helpers import *
 from GUI.CreateAnewProducteInterface import *
 from models.employee import *
 import os
+from models.payment import *
 
 
+<<<<<<< HEAD
 # def employee_enter(Library):
 #     while True:
 #             employee_name=input("enter your name :")
@@ -16,14 +18,33 @@ import os
 #                     return employee_name
 
 #                  else:print("you are not in the system")
+=======
+
+>>>>>>> 9d1503aa99fb630739ad90b6b7ef8f73e29cf0c7
                  
 
             
     
+<<<<<<< HEAD
 # name=employee_enter()
+=======
+
+>>>>>>> 9d1503aa99fb630739ad90b6b7ef8f73e29cf0c7
 def main():
     #ask to enter the name of employee and check from file of employee 
     #store it in متغير to add it in saleitem and sale
+
+    # def employee_enter():
+    #     while True:
+    #         employee_name=input("enter your name :")
+    #         for em in Library.products:
+    #              if employee_name==em.name:
+    #                 print(f"hi? {employee_name}")
+    #                 return employee_name
+
+    #              else:print("you are not in the system")
+
+    # name=employee_enter()
     
    
     Library=Store("basharstore")
@@ -47,6 +68,7 @@ def main():
                 case 2:
                    os.system("cls")
                    Library.DisplayProduct()
+
 
                    
                 case 3:
