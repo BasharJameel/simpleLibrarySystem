@@ -2,12 +2,12 @@ from models.sale import sale
 from models.employee import Employee
 from models.saleitem import saleitem
 from models.category import Category
-<<<<<<< HEAD
+
 from models.product import *
-=======
+
 from models.product import Product
-from models.payment import payment,process_payment
->>>>>>> da30358a2bf897867424ad5f799d39035559e8cc
+from models.payment import *
+
 
 class Store:
 
