@@ -85,13 +85,17 @@ def main():
             choice=int(input("enter your choice:"))
             match choice:
                 case 1:
-                   os.system("cls")
-                   info =create_employee()
-                 # info =[ employee_id, name, jobs, phone, salary]
-                   Library.AddEmployee(info[0],info[1],info[2],info[3], info[4])
-                   print("employee Created .")
-                   PrintEmployeeMenu()
+                   i ='y'
+                   while(i=='y' or i== 'Y'):
+                     os.system("cls")
+                     info =create_employee()
+                   # info =[ employee_id, name, jobs, phone, salary]
+                     Library.AddEmployee(info[0],info[1],info[2],info[3], info[4])
+                     print("employee Created .")
+                     i=input("do you wante to enter another Employee Y/N")
                    
+                   os.system("cls")
+                   PrintEmployeeMenu()
                 #make visulse for add Employee #$bashar  
                 case 2:
                    PrintEmployeeDisplayHeader(Library.Employees)

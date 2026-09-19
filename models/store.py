@@ -2,6 +2,7 @@ from models.sale import sale
 from models.employee import Employee
 from models.saleitem import saleitem
 from models.category import Category
+from models.product import *
 
 class Store:
 
@@ -58,6 +59,12 @@ class Store:
 
           
     def SearchProduct(self,SearchedProduct):
+        for product in self.products:
+          
+            if (product.id==SearchedProduct):
+                product.display_info()
+
+    def SearchEmployee(self,SearchedEmployee):
         for product in self.products:
           
             if (product.id==SearchedProduct):

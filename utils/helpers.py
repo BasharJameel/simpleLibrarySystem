@@ -81,7 +81,7 @@ def LoadSalas(Library, Employees):
                 price_unit = float(item[2])
 
                 items.append(
-                    SaleItem(product_id, quantity, price_unit)
+                    saleitem(product_id, quantity, price_unit)
                 )
 
             employee = None
