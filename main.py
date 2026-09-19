@@ -1,6 +1,8 @@
 from utils.display import PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
 from models.store import store
 
+
+
 def main():
     #ask to enter the name of employee and check from file of employee 
     #store it in متغير to add it in saleitem and sale
