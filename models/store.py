@@ -3,7 +3,7 @@ from models.employee import Employee
 from models.saleitem import saleitem
 from models.category import Category
 
-class store:
+class Store:
 
     def __init__(self,name):
         self.name=name

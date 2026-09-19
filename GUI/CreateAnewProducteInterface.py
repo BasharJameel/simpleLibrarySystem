@@ -1,13 +1,17 @@
 import tkinter as tk
 
 
-def SaveProduct():
+def AddProductGUI():
+
+    def SaveProduct():
         id=idText.get()
         name=nameText.get()
         price=PriceText.get()
         Catgories=CatgoriesText.get()
         Description=DescriptionText.get()
         Status=StatusText.get()
+
+
 
         idText.delete(0, tk.END)
         nameText.delete(0, tk.END)
@@ -16,7 +20,6 @@ def SaveProduct():
         DescriptionText.delete(0, tk.END)
         StatusText.delete(0, tk.END)
 
-if (1):
     root=tk.Tk()
     root.geometry("800x500")
     root.title("librarySystem/a New Product")

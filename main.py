@@ -1,11 +1,13 @@
 from utils.display import PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
-from models.store import store
+from models.store import *
 from utils.helpers import *
+from GUI.CreateAnewProducteInterface import *
+import os
 def main():
     #ask to enter the name of employee and check from file of employee 
     #store it in متغير to add it in saleitem and sale
     
-    Library = store("bashar store")
+    Library=Store("basharstore")
 
     LoadProduct(Library)
     
@@ -16,13 +18,13 @@ def main():
 
         PrintProductMenu()
         
-
+        choice=int(input("enter your choice:"))
         while True:
-            choice=int(input("enter your choice:"))
+            
             match choice:
-                case 1:
-                   pass
-                   break    
+                case 1:AddProductGUI()
+
+                       
                 case 2:
                    pass
                    break
@@ -42,6 +44,10 @@ def main():
                     main_project()            
                     break
                 case _:print("out of the scope,please try againe:")
+            print("----------------------------\n")
+            choice=int(input("enter another choice:"))
+            
+
 
 
 
@@ -90,6 +96,7 @@ def main():
                     pass
                     break
                 case 7:
+                    os.system("cls")
                     main_project()
                     break
                 case _:print("out of the scope,please try againe:")
@@ -116,6 +123,7 @@ def main():
                     pass
                     break
                 case 5:
+                    os.system("cls")
                     main_project()
                     break
                 case _:print("out of the scope,please try againe:")
@@ -129,13 +137,14 @@ def main():
 
 
     def main_project():
-
-        PrintWelcomeMassage()
+        
+        
         PrintMainMenu()
     
         choice = int(input("Enter Your Choice: "))
         match choice:
             case 1:
+                os.system("cls")
                 products_process()
             case 2:
                 category_process()
@@ -155,7 +164,7 @@ def main():
            
         
     
-        
+    PrintWelcomeMassage()    
     main_project()            
          
 
