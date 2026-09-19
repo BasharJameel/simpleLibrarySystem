@@ -94,55 +94,27 @@ def LoadSalas(Library, Employees):
             Library.AddSale( sale_id, date, employee, items, total, payment )
 
 
-def LoadSalas(Employees):
-    Sales = []
 
-    file = open("data/Salas.txt", "r")
+def SaveEmployee(Employees):
+    with open("data\employees.txt",'w') as file:
+        for Employee in Employees:
+           file.write(f"|{Employee.employee_id}|{Employee.name}|{Employee.phone}|{Employee.salary}\n")
+    file.close ()      
 
-    for line in file:
-        data = line.strip().split("|")
 
-        sale_id = int(data[1])
-        date = data[2]
-        employee_id = int(data[3])
-        total = float(data[4])
-        payment = data[6]
+def LoadEmployee(Library):
 
-        # البحث عن الموظف
-        employee = None
+    with open("data/employees.txt", 'r') as file:
 
-        for emp in Employees:
-            if emp.employee_id == employee_id:
-                employee = emp
-                break
+        for line in file:
+            data = line.strip().split('|')
 
-        # إنشاء Sale
-        sale = Sale(sale_id, date, employee, [], total, payment)
+            employee_id = int(data[1])
+            name = data[2]
+            phone = data[3]
+            salary = float(data[4])
 
-        # قراءة الـ items
-        items = data[5].split(",")
-
-        for item_data in items:
-            item = item_data.split(":")
-
-            product_id = int(item[0])
-            quantity = int(item[1])
-            price_unit = float(item[2])
-
-            sale_item = SaleItem(
-                product_id,
-                quantity,
-                price_unit
-            )
-
-            sale.items.append(sale_item)
-
-        Sales.append(sale)
-
-    file.close()
-
-    return Sales
-
+            Library.AddEmployee(employee_id,name,phone,salary )
 
 
         
