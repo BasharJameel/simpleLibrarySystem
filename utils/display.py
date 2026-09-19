@@ -27,9 +27,9 @@ def PrintProductMenu():
     print("           Product Menu              ")
     print("=====================================")
     print("1. Add Product")
-    print("2. Display Products")
+    print("2. Display  Products")
     print("3. Search Product")
-    print("4. Update Product")
+    print("4. Update Price Product")
     print("5. Delete Product")
     print("6. Change Product Status")
     print("7. Back")
@@ -41,7 +41,8 @@ def PrintCategoryMenu():
     print("=====================================")
     print("1. Display Categories")
     print("2. Display Products by Category")
-    print("3. Back")
+    print("3. add Category")
+    print("4-Back")
 
 
 def PrintEmployeeMenu():
@@ -51,7 +52,7 @@ def PrintEmployeeMenu():
     print("1. Add Employee")
     print("2. Display Employees")
     print("3. Search Employee")
-    print("4. Update Employee")
+    print("4. Update Employee's salary")
     print("5. Delete Employee")
     print("6. Employee Count")
     print("7. Back")
@@ -121,3 +122,13 @@ def PrintGoodbye():
     print("=====================================")
     print("     Thank You, Goodbye!             ")
     print("=====================================")
+
+def printsalessubprocess():
+    print("=====================================")
+    print("            Saleitem Menu               ")
+    print("=====================================")
+    print("1. add")
+    print("2. Display Sales")
+    print("3. Search Sale")
+    print("4. Back")
+    

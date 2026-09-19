@@ -38,6 +38,7 @@ class Product:
             return False
         
     def update_price(self, new_price):
+        
         self.price = new_price
 
     def change_status(self, new_status):
