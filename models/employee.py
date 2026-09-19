@@ -85,6 +85,21 @@ class Storekeeper(Employee):
         print(f"{self.name} is checking the inventory.")
         return inventory
 
+
+def create_employee():
+      print("\nChoose employee type:")
+      print("1. Manager")
+      print("2. Cashier")
+      print("3. Storekeeper")
+      jobs = input("Enter choice (1-3): ")
+      employee_id = int(input("Employee ID: "))
+      name = input("Name: ")
+      phone = input("Phone: ")
+      salary = float(input("Salary: "))
+      data =[ employee_id, name, jobs, phone, salary]
+
+      return data
+
 if __name__ == "__main__":
 
     def create_employee():
@@ -92,23 +107,16 @@ if __name__ == "__main__":
         print("1. Manager")
         print("2. Cashier")
         print("3. Storekeeper")
-        choice = input("Enter choice (1-3): ")
+        jobs = input("Enter choice (1-3): ")
 
         employee_id = int(input("Employee ID: "))
         name = input("Name: ")
         phone = input("Phone: ")
         salary = float(input("Salary: "))
+        data =[ employee_id, name, phone, salary]
 
-        if choice == "1":
-            department = input("Department: ")
-            return Manager(employee_id, name, phone, salary, department)
-        elif choice == "2":
-            return Cashier(employee_id, name, phone, salary)
-        elif choice == "3":
-            return Storekeeper(employee_id, name, phone, salary)
-        else:
-            print("Invalid choice, defaulting to Cashier.")
-            return Cashier(employee_id, name, phone, salary)
+        return data
+
 
     employees = []
     how_many = int(input("How many employees do you want to add? "))

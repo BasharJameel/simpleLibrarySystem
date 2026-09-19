@@ -57,7 +57,7 @@ class Store:
         
 
           
-    def Search_Product(self,SearchedProduct):
+    def SearchProduct(self,SearchedProduct):
         for product in self.products:
           
             if (product.id==SearchedProduct):

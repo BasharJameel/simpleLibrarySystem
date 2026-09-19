@@ -1,7 +1,8 @@
-from utils.display import PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
+from utils.display import PrintEmployeeDisplayHeader, PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
 from models.store import *
 from utils.helpers import *
 from GUI.CreateAnewProducteInterface import *
+from models.employee import *
 import os
 def main():
     #ask to enter the name of employee and check from file of employee 
@@ -12,8 +13,6 @@ def main():
     LoadProduct(Library)
     
     
-    
-        
     def products_process():
 
         PrintProductMenu()
@@ -22,25 +21,31 @@ def main():
         while True:
             
             match choice:
-                case 1:AddProductGUI()
+                case 1:
+                    os.system("cls")
+                    AddProductGUI()
+                    PrintProductMenu()
 
-                       
                 case 2:
-                   pass
-                   break
+                   os.system("cls")
+                   Library.DisplayProduct()
+
+                   
                 case 3:
-                    pass
-                    break
+                    os.system("cls")
+                    Library.SearchProduct()
                 case 4:
                     pass
-                    break
+                    break#creat  update interface
                 case 5:
                     pass
-                    break
+                    #Creat menu to delet prodct 
                 case 6:
                     pass
+                    #Creat a interface of change stats
                     break
                 case 7:
+                    os.system("cls")
                     main_project()            
                     break
                 case _:print("out of the scope,please try againe:")
@@ -58,11 +63,14 @@ def main():
             match choice:
                 case 1:
                     pass
+                    #creat interface call the list  of category and print it
                     break
                 case 2:
                     pass
                     break
+                    #I make it in the in store.py (DisplayProduct - line 44) 
                 case 3:
+                    os.system("cls")
                     main_project()
                     break
                 case _:print("Invalid choice. Please try again.")
@@ -77,10 +85,16 @@ def main():
             choice=int(input("enter your choice:"))
             match choice:
                 case 1:
-                   pass
-                   break    
+                   os.system("cls")
+                   info =create_employee()
+                 # info =[ employee_id, name, jobs, phone, salary]
+                   Library.AddEmployee(info[0],info[1],info[2],info[3], info[4])
+                   print("employee Created .")
+                   PrintEmployeeMenu()
+                   
+                #make visulse for add Employee #$bashar  
                 case 2:
-                   pass
+                   PrintEmployeeDisplayHeader(Library.Employees)
                    break
                 
                 case 3:
@@ -129,13 +143,6 @@ def main():
                 case _:print("out of the scope,please try againe:")
     
 
-        
-
-
-
-
-
-
     def main_project():
         
         
@@ -147,16 +154,22 @@ def main():
                 os.system("cls")
                 products_process()
             case 2:
+                os.system("cls")
                 category_process()
             case 3:
+                os.system("cls")
                 employee_process()
             case 4:
+                os.system("cls")
                 inventory_process()
             case 5:
+                os.system("cls")
                 PrintSalesMenu()
             case 6:
+                os.system("cls")
                 PrintReportsMenu()
             case 7:
+                os.system("cls")
                 print("Goodbye!")
             case _:
                 print("Invalid choice. Please try again.")
