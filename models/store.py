@@ -59,7 +59,13 @@ class Store:
         print("New Category has been add ")
 
 
-        
+    def DisplayCategory(self):
+        print("--------------------------------------")
+        print("            Display Category          ")
+        print("--------------------------------------")
+        for Cate in self.Category:
+            print(f"----{Cate.name}----")
+
 
     def DisplayProductByCategory(self):
          print("--------------------------------------")
