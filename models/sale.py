@@ -59,6 +59,7 @@ class sale:
             total_item=saleitem.calculate_subtotal()
             item =saleitem(product_id,quantity,total_item)
             self.add_item(item)
+            edit
 
             repeat=input("do you want to add another item:")
             if repeat=="yes" or repeat=="Yes":
