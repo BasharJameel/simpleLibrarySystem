@@ -58,6 +58,7 @@ class Store:
         print("-"*10)
         print("New Category has been add ")
 
+
         
 
     def DisplayProductByCategory(self):
@@ -67,7 +68,7 @@ class Store:
          
          for Cate in self.Category:
          
-           print(f"----{Cate}----")
+           print(f"----{Cate.name}----")
   
            for product in self.products:
            
