@@ -75,6 +75,7 @@ def main():
                              print("there is no product has this id")
                        
                 case 5:
+                        found=False
                         SearchedProduct=input("Enter product ID to delete")
                     
                         for product in Library.products:
@@ -83,8 +84,8 @@ def main():
        
                                Library.products.remove(product)
                                print("the price has been deleted")
-                               i=0
-                          if (i):
+                               found=True
+                          if (not found):
                                print("there is no product has this id")
                 case 6:
                      SearchedProduct=input("Enter product ID to Change status")
@@ -158,21 +159,35 @@ def main():
                     os.system("cls")
                     Library.SearchEmployee()
                 case 4:
-                    
+                    employeeid=int(input("enter the employee id:"))
+                    found=False
                     for Employees in Library.Employees:
-                       employeeid=int(input("enter the employee id:"))
+                       
                        if Employees.employee_id==employeeid:
                             new_salary=int(input("enter the new salary:"))
                             Employees.update_salary(new_salary)
-                    else:
-                        print("error id")
+                            found=True
+                    if (not found):
+                      print("There is no Employee has this id")
                         
                 case 5:
-                    pass
-                    break
+                    SearchedProduct=input("Enter Employee ID to delete")
+                    found=False
+                    for Employee in Library.Employees:
+               
+                          if (str(Employee.employee_id==SearchedProduct)):
+       
+                               Library.Employees.remove(Employee)
+                               print("the Employee has been deleted")
+                               found=True
+                    if (not found):
+                         print("there is no Employee has this id")
+                
                 case 6:
                     os.system("cls")
+                    print("========================\n \n")
                     print(f"the number of employees is: ",len(Library.Employees))
+                    print("--------------------\n \n ")
                 case 7:
                     os.system("cls")
                     main_project()

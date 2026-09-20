@@ -19,7 +19,6 @@ class Store:
         self.SalasProduct=0
 
     def AddEmployee(self, Employee_id, name, phone, salary, jobs=1):
-         print(jobs)
          if (int(jobs) == 1):
          
             self.Employees.append(Employee(Employee_id, name, jobs, phone, salary))
@@ -105,13 +104,17 @@ class Store:
             print("there is no product has this id")
                
 
-    def SearchEmployee(self,SearchedEmployee):
+    def SearchEmployee(self):
         SearchedEmployee=input("Enter  Employee ID That you wante to Search aboute")
+        found=False
 
         for Employee in self.Employees:
           
-            if (Employee.id==SearchedEmployee):
+            if (Employee.employee_id==SearchedEmployee):
                 product.display_info()
+                found=True
+        if(not found):
+            print("there is no Employee has such as the id")
 
     def DisplaySales(self,SearchSale):
         SearchSale=input("Enter  Salae ID That you wante to Delete it >")
