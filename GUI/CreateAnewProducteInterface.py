@@ -1,17 +1,19 @@
 import tkinter as tk
 
 
-def AddProductGUI():
 
+def AddProductGUI():
+    DataList= []
     def SaveProduct():
+        nonlocal DataList
         id=idText.get()
         name=nameText.get()
-        price=PriceText.get()
+        price=int(PriceText.get())
         Catgories=CatgoriesText.get()
         Description=DescriptionText.get()
         Status=StatusText.get()
 
-
+        DataList=[id ,name, price, Catgories, Description, Status ]
 
         idText.delete(0, tk.END)
         nameText.delete(0, tk.END)
@@ -19,6 +21,11 @@ def AddProductGUI():
         CatgoriesText.delete(0, tk.END)
         DescriptionText.delete(0, tk.END)
         StatusText.delete(0, tk.END)
+
+
+        
+        root.destroy()
+        
 
     root=tk.Tk()
     root.geometry("800x500")
@@ -79,8 +86,10 @@ def AddProductGUI():
 
     
 
-
+    
     root.mainloop()
+
+    return DataList
 
 
 

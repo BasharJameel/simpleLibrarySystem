@@ -8,28 +8,9 @@ import os
 from models.payment import *
 
 
-<<<<<<< HEAD
-# def employee_enter(Library):
-#     while True:
-#             employee_name=input("enter your name :")
-#             for em in Library.products:
-#                  if employee_name==em.name:
-#                     print(f"hi? {employee_name}")
-#                     return employee_name
-
-#                  else:print("you are not in the system")
-=======
-
->>>>>>> 9d1503aa99fb630739ad90b6b7ef8f73e29cf0c7
-                 
 
             
-    
-<<<<<<< HEAD
-# name=employee_enter()
-=======
 
->>>>>>> 9d1503aa99fb630739ad90b6b7ef8f73e29cf0c7
 def main():
     #ask to enter the name of employee and check from file of employee 
     #store it in متغير to add it in saleitem and sale
@@ -48,6 +29,8 @@ def main():
     
    
     Library=Store("basharstore")
+
+    LoadEmployee(Library)
     LoadProduct(Library)
     # employee_enter(Library)
     
@@ -55,25 +38,28 @@ def main():
     def products_process():
 
         PrintProductMenu()
-        
+   
+        print(f"{Library.Employees[0].name}")
         choice=int(input("enter your choice:"))
         while True:
             
             match choice:
                 case 1:
                     os.system("cls")
-                    AddProductGUI()
+                    productData = AddProductGUI()
+                    Library.AddProduct(productData[0],productData[1],productData[2],productData[3],productData[4],productData[5] )
                     PrintProductMenu()
 
                 case 2:
                    os.system("cls")
                    Library.DisplayProduct()
 
-
-                   
                 case 3:
-                    os.system("cls")
-                    Library.SearchProduct()
+                    while(i=="Y"):
+
+                     os.system("cls")
+                     Library.SearchProduct()
+                     i=input("Do you wante to enter search agine Y/N")
                 case 4:
                     pass
                     break#creat  update interface
@@ -90,6 +76,7 @@ def main():
                     break
                 case _:print("out of the scope,please try againe:")
             print("----------------------------\n")
+            PrintProductMenu()
             choice=int(input("enter another choice:"))
             
 
@@ -121,6 +108,7 @@ def main():
     def employee_process():
 
         PrintEmployeeMenu()
+
         while True:
             choice=int(input("enter your choice:"))
             match choice:
@@ -130,7 +118,7 @@ def main():
                      os.system("cls")
                      info =create_employee()
                    # info =[ employee_id, name, jobs, phone, salary]
-                     Library.AddEmployee(info[0],info[1],info[2],info[3], info[4])
+                     Library.AddEmployee(info[0],info[1],info[3], info[4],info[2])
                      print("employee Created .")
                      i=input("do you wante to enter another Employee Y/N")
                    
@@ -142,22 +130,32 @@ def main():
                    break
                 
                 case 3:
-                    pass
-                    break
+                    os.system("cls")
+                    Library.SearchEmployee()
                 case 4:
-                    pass
-                    break
+                    
+                    for Employees in Library.Employees:
+                       employeeid=int(input("enter the employee id:"))
+                       if Employees.employee_id==employeeid:
+                            new_salary=int(input("enter the new salary:"))
+                            Employees.update_salary(new_salary)
+                    else:
+                        print("error id")
+                        
                 case 5:
                     pass
                     break
                 case 6:
-                    pass
-                    break
+                    os.system("cls")
+                    print(f"the number of employees is: ",len(Library.Employees))
                 case 7:
                     os.system("cls")
                     main_project()
                     break
-                case _:print("out of the scope,please try againe:")
+                case _:
+                    print("out of the scope,please try againe:")
+                    print("----------------------------\n")
+                    choice=int(input("enter another choice:"))
 
 
 
@@ -213,6 +211,9 @@ def main():
                 os.system("cls")
                 PrintReportsMenu()
             case 7:
+                SaveEmployee(Library.Employees)
+                SaveProduct(Library.products)
+                SaveSalas(Library.sales)
                 os.system("cls")
                 print("Goodbye!")
             case _:
@@ -225,9 +226,6 @@ def main():
     main_project()            
          
 
-    
-
-    
 
 if __name__ == "__main__":
     main()

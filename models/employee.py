@@ -1,14 +1,14 @@
 from abc import ABC, abstractmethod
 
-class Employee(ABC):
+class Employee():
 
     employee_count = 0
 
-    def __init__(self, employee_id, name, phone, salary):
+    def __init__(self, employee_id, name, phone, salary, jobs):
         self.employee_id = employee_id
         self.name = name
         self.phone = phone
-
+        self.jobs=jobs
         self.__salary = salary
 
         Employee.employee_count += 1

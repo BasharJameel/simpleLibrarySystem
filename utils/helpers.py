@@ -23,7 +23,7 @@ def LoadProduct(Library):
 
             product_id=int(data[1])
             name=data[2]
-            price=data[3]
+            price=int(data[3])
             category=data[4]
             description=data[5]
             status=data[6]
@@ -115,7 +115,7 @@ def LoadEmployee(Library):
             salary = float(data[4])
 
             Library.AddEmployee(employee_id,name,phone,salary )
-
+   
 
         
 
