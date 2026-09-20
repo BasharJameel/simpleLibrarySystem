@@ -111,9 +111,6 @@ def main():
             
 
 
-
-
-
     def  category_process():
         
         while True:
@@ -125,20 +122,19 @@ def main():
                 case 3:
                     Library.DisplayProductByCategory()
                 case 2:
-                    Library.DisplayProduct
+                    Library.Display
                 case 4:pass
                   
                 case _:
                     print("Invalid choice.")
                 
         
-
-    
     def employee_process():
 
-        PrintEmployeeMenu()
+        
 
         while True:
+            PrintEmployeeMenu()
             choice=int(input("enter your choice:"))
             match choice:
                 case 1:
@@ -155,8 +151,8 @@ def main():
                    PrintEmployeeMenu()
                 #make visulse for add Employee #$bashar  
                 case 2:
+                   os.system("cls")
                    PrintEmployeeDisplayHeader(Library.Employees)
-                   break
                 
                 case 3:
                     os.system("cls")
@@ -186,7 +182,7 @@ def main():
                     print("----------------------------\n")
                     choice=int(input("enter another choice:"))
 
-
+                
 
 
     def inventory_process():
@@ -248,7 +244,7 @@ def main():
             case _:
                 print("Invalid choice. Please try again.")
            
-           
+
            
         
     
