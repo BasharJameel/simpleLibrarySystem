@@ -166,6 +166,7 @@ def main():
                        if Employees.employee_id==employeeid:
                             new_salary=int(input("enter the new salary:"))
                             Employees.update_salary(new_salary)
+                            
                             found=True
                     if (not found):
                       print("There is no Employee has this id")
@@ -199,6 +200,47 @@ def main():
 
                 
     
+    def Report_process():
+        
+
+        while True:
+            PrintReportsMenu()
+            choice=int(input("Eenter your choice:"))
+            match choice:
+                case 1:
+                    os.system("cls")
+                    print("================Porduct Report==================")
+                    print(f"Total Product: {len(Library.products)}\n")
+                    print("Avlible product :")
+                    
+                    for pro in Library.products:
+                        if(str(pro.status)=='1'):
+                            print(f"-{pro.name}")
+
+                    print("=================================================")
+                case 2:
+                    os.system("cls")
+                    print("================Porduct Report==================")
+                    print(f"Total Employee: {len(Library.Employees)}\n")
+                    print("Empoyee list :\n")
+                    print(f" {'Name' :<20}{'Role' :<15}")
+                    for pro in Library.Employees:
+                        
+                         print(f" {pro.name :<20}{pro.jobs :<15}")
+
+                    print("=================================================")
+                case 3:
+                    os.system("cls")
+                    print("-------------------------")
+                    print("the section is not completed")
+                    print("-------------------------")
+                    
+                case 4:
+                    os.system("cls")
+                    main_project()
+                    break
+                case _:print("out of the scope,please try againe:")
+    
 
     def main_project():
         
@@ -221,7 +263,7 @@ def main():
                 PrintSalesMenu()
             case 5:
                 os.system("cls")
-                PrintReportsMenu()
+                Report_process()
             case 6:
                 SaveEmployee(Library.Employees)
                 SaveProduct(Library.products)
