@@ -77,14 +77,6 @@ class Storekeeper(Employee):
     def __init__(self, employee_id, name, phone, salary):
         super().__init__(employee_id, name, phone, salary)
 
-    def work(self):
-        print(f"{self.name} (Storekeeper) is checking and organizing "
-              f"the store inventory.")
-
-    def check_inventory(self, inventory=None):
-        print(f"{self.name} is checking the inventory.")
-        return inventory
-
 
 def create_employee():
       print("\nChoose employee type:")

@@ -1,5 +1,5 @@
-from utils.display import PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
-from utils.display import PrintEmployeeDisplayHeader, PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintInventoryMenu, PrintSalesMenu, PrintReportsMenu
+from utils.display import PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintSalesMenu, PrintReportsMenu
+from utils.display import PrintEmployeeDisplayHeader, PrintWelcomeMassage, PrintMainMenu, PrintProductMenu, PrintCategoryMenu, PrintEmployeeMenu, PrintSalesMenu, PrintReportsMenu
 from models.store import *
 from utils.helpers import *
 from GUI.CreateAnewProducteInterface import *
@@ -198,31 +198,6 @@ def main():
                     choice=int(input("enter another choice:"))
 
                 
-
-
-    def inventory_process():
-        
-        PrintInventoryMenu()
-        while True:
-            choice=int(input("Eenter your choice:"))
-            match choice:
-                case 1:
-                    pass
-                    break
-                case 2:
-                    pass
-                    break
-                case 3:
-                    pass
-                    break
-                case 4:
-                    pass
-                    break
-                case 5:
-                    os.system("cls")
-                    main_project()
-                    break
-                case _:print("out of the scope,please try againe:")
     
 
     def main_project():
@@ -243,14 +218,11 @@ def main():
                 employee_process()
             case 4:
                 os.system("cls")
-                inventory_process()
+                PrintSalesMenu()
             case 5:
                 os.system("cls")
-                PrintSalesMenu()
-            case 6:
-                os.system("cls")
                 PrintReportsMenu()
-            case 7:
+            case 6:
                 SaveEmployee(Library.Employees)
                 SaveProduct(Library.products)
                 SaveSalas(Library.sales)
@@ -258,6 +230,8 @@ def main():
                 print("Goodbye!")
             case _:
                 print("Invalid choice. Please try again.")
+
+
            
 
            
