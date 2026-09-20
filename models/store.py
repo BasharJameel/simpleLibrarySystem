@@ -2,15 +2,9 @@ from models.sale import sale
 from models.employee import Employee
 from models.saleitem import saleitem
 from models.category import Category
-
 from models.product import *
-
-<<<<<<< HEAD
-=======
-from models.product import Product
 from models.payment import *
 
->>>>>>> 9d1503aa99fb630739ad90b6b7ef8f73e29cf0c7
 
 class Store:
 
@@ -103,8 +97,11 @@ class Store:
                 product.display_info()
 
     def DisplaySales(self,SearchSale):
-        SearchSale=input("Enter  Salae ID That you wante to Delete it")
+        SearchSale=input("Enter  Salae ID That you wante to Delete it >")
 
         for Sales in self.sales:
             if (Sales.id==SearchSale):
                 Sales.display_sale()
+
+
+
