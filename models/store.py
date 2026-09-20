@@ -4,7 +4,10 @@ from models.saleitem import saleitem
 from models.category import Category
 
 from models.product import *
+
+
 from models.payment import *
+
 
 class Store:
 
@@ -34,11 +37,10 @@ class Store:
      
 
     def CreatSale(self, Employee, payment):
-        sale =sale(Employee,payment)
+        self.sales.append(sale(Employee,payment))
 
-        sale.create_saleitem()
-
-        payment.process_payment(sale.calculate_total())
+        self.sales.create_saleitem()
+        payment.process_payment(self.sales.calculate_total())
 
 
         
@@ -56,9 +58,9 @@ class Store:
 
         
 
-    def DisplayProductByCategory(self):
+    def DisplayProduct(self):
          print("--------------------------------------")
-         print("      Product List  ByCategory              ")
+         print("          Product List                ")
          print("--------------------------------------")
          
          for Cate in self.Category:
@@ -70,19 +72,9 @@ class Store:
              if (product.category == Cate):
                   print(f"-{product.name}")
         
-    def DisplayProduct(self):
-         print("--------------------------------------")
-         print("          Product List                ")
-         print("--------------------------------------")
-         
-         for product in self.products:
-          print(f"-{product.name}")
-        
 
           
-    def SearchProduct(self):
-       
-        SearchedProduct=input("Enter  Product ID That you wante to Search aboute")
+    def SearchProduct(self,SearchedProduct):
         for product in self.products:
           
             if (product.id==SearchedProduct):
@@ -97,8 +89,7 @@ class Store:
                 Employee.display_info()
 
     def DisplaySales(self,SearchSale):
-        SearchSale=input("Enter  Salae ID That you wante to Delete it")
-
-        for Sales in self.sales:
+         for Sales in self.sales:
+          
             if (Sales.id==SearchSale):
                 Sales.display_sale()
