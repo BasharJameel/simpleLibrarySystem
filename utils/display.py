@@ -29,7 +29,7 @@ def PrintProductMenu():
     print("1. Add Product")
     print("2. Display Products")
     print("3. Search Product")
-    print("4. Update Product")
+    print("4. Update Product Price")
     print("5. Delete Product")
     print("6. Change Product Status")
     print("7. Back")
@@ -39,9 +39,10 @@ def PrintCategoryMenu():
     print("=====================================")
     print("          Category Menu              ")
     print("=====================================")
-    print("1. Display Categories")
-    print("2. Display Products by Category")
-    print("3. Back")
+    print("1. Add Categories")
+    print("2. Display Categories")
+    print("3. Display Products by Category")
+    print("4. Back")
 
 
 def PrintEmployeeMenu():

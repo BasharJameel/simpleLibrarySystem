@@ -9,6 +9,7 @@ class Product:
         self.description=description
         self.status=status
 
+
     @property
     def price(self):
         # Private تجعل المتغير
@@ -48,6 +49,8 @@ class Product:
             return True
         else:
             return False
+
+
 
     # display_info()      → عرض معلومات المنتج
     # update_price()      → تحديث السعر

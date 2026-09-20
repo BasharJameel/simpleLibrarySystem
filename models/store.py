@@ -49,12 +49,14 @@ class Store:
         self.sales.append(sale(Employee))
       
 
-    def AddCategory(self,description):
+    def AddCategory(self):
         print("="*10)
         category_id=input("Enter Categorey ID ")
         name=input("Enter Categorey Name")
         description=input("Enter Categorey Descriiption")
         self.Category.append(Category(category_id,name,description))
+        print("-"*10)
+        print("New Category has been add ")
 
         
 

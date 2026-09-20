@@ -55,21 +55,51 @@ def main():
                    Library.DisplayProduct()
 
                 case 3:
-                    while(i=="Y"):
+                    i='Y'
+                    while(i=="Y" or i=='y'):
 
                      os.system("cls")
                      Library.SearchProduct()
                      i=input("Do you wante to enter search agine Y/N")
                 case 4:
-                    pass
-                    break#creat  update interface
+                    SearchedProduct=input("Enter product ID ")
+                    
+                    for product in Library.products:
+        
+                        if (str(product.product_id)==SearchedProduct):
+                             price=int(input("Enter the new price"))
+                             product.update_price(price)
+                             print("the price has been change")
+                             i=0
+                        if (i):
+                             print("there is no product has this id")
+                       
                 case 5:
-                    pass
-                    #Creat menu to delet prodct 
+                        SearchedProduct=input("Enter product ID to delete")
+                    
+                        for product in Library.products:
+               
+                          if (str(product.product_id)==SearchedProduct):
+       
+                               Library.products.remove(product)
+                               print("the price has been deleted")
+                               i=0
+                          if (i):
+                               print("there is no product has this id")
                 case 6:
-                    pass
-                    #Creat a interface of change stats
-                    break
+                     SearchedProduct=input("Enter product ID to Change status")
+                     found=False
+                     for product in Library.products:
+
+                          
+                          if (str(product.product_id)==SearchedProduct):
+
+                               status=int(input("Enter the new status"))
+                               product.change_status(status)
+                               print("the status has been change  ")
+                               found=True
+                     if (not found):
+                      print("there is no product has this id")
                 case 7:
                     os.system("cls")
                     main_project()            
@@ -83,24 +113,23 @@ def main():
 
 
 
+
     def  category_process():
-        PrintCategoryMenu()
+        
         while True:
+            PrintCategoryMenu()
             choice = int(input("Enter Your Choice: "))
             match choice:
                 case 1:
-                    pass
-                    #creat interface call the list  of category and print it
-                    break
-                case 2:
-                    pass
-                    break
-                    #I make it in the in store.py (DisplayProduct - line 44) 
+                    Library.AddCategory()
                 case 3:
-                    os.system("cls")
-                    main_project()
-                    break
-                case _:print("Invalid choice. Please try again.")
+                    Library.DisplayProductByCategory()
+                case 2:
+                    Library.DisplayProduct
+                case 4:pass
+                  
+                case _:
+                    print("Invalid choice.")
                 
         
 
