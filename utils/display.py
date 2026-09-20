@@ -16,10 +16,10 @@ def PrintMainMenu():
     print("1. Products")
     print("2. Categories")
     print("3. Employee")
-    print("4. Inventory")
-    print("5. Sales ")
-    print("6. Reports")
-    print("7. Exit")
+    print("4. Sales")
+    print("5. Reports")
+    print("6. Exit")
+    
 
 
 def PrintProductMenu():
@@ -58,16 +58,6 @@ def PrintEmployeeMenu():
     print("7. Back")
 
 
-def PrintInventoryMenu():
-    print("=====================================")
-    print("          Inventory Menu             ")
-    print("=====================================")
-    print("1. Add Stock")
-    print("2. Remove Stock")
-    print("3. Check Stock")
-    print("4. Inventory Report")
-    print("5. Back")
-
 
 def PrintSalesMenu():
     print("=====================================")
@@ -84,10 +74,9 @@ def PrintReportsMenu():
     print("           Reports Menu              ")
     print("=====================================")
     print("1. Products Report")
-    print("2. Inventory Report")
-    print("3. Employees Report")
-    print("4. Sales Report")
-    print("5. Back")
+    print("2. Employees Report")
+    print("3. Sales Report")
+    print("4. Back")
 
 
 def PrintEmployeeTypeMenu():

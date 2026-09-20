@@ -19,6 +19,7 @@ class Store:
         self.SalasProduct=0
 
     def AddEmployee(self, Employee_id, name, phone, salary, jobs=1):
+         print(jobs)
          if (int(jobs) == 1):
          
             self.Employees.append(Employee(Employee_id, name, jobs, phone, salary))
@@ -35,7 +36,7 @@ class Store:
      
 
     def CreatSale(self, Employee, payment):
-        sale =sale(Employee,payment)
+        sale1 =sale(Employee,payment)
 
         sale.create_saleitem()
 
@@ -68,7 +69,7 @@ class Store:
 
     def DisplayProductByCategory(self):
          print("--------------------------------------")
-         print("      Product List  ByCategory              ")
+         print("      Product List  ByCategory        ")
          print("--------------------------------------")
          
          for Cate in self.Category:
@@ -93,28 +94,24 @@ class Store:
     def SearchProduct(self):
        
         SearchedProduct=input("Enter  Product ID That you wante to Search aboute")
-        i=1
+        found=False
       
         for product in self.products:
           
             if (str(product.product_id)==SearchedProduct):
                 product.display_info()
-                i=0
-        if (i):
-            print("there is no product has this id")
+                found=True
+        if (not found):
+            print("There is no product has this id")
                
 
-    def SearchEmployee(self):
+    def SearchEmployee(self,SearchedEmployee):
         SearchedEmployee=input("Enter  Employee ID That you wante to Search aboute")
-        found=False
 
         for Employee in self.Employees:
           
-            if (Employee.employee_id==SearchedEmployee):
-                product.display_info()
-                found=True
-        if(not found):
-            print("there is no Employee has such as the id")
+            if (Employee.id==SearchedEmployee):
+                Employee.display_info()
 
     def DisplaySales(self,SearchSale):
         SearchSale=input("Enter  Salae ID That you wante to Delete it >")
