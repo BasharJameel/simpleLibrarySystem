@@ -119,13 +119,17 @@ def main():
              choice = int(input("Enter Your Choice: "))
              match choice:
                  case 1:
+                     os.system("cls")
                      Library.AddCategory()
                  case 3:
+                     os.system("cls")
                      Library.DisplayProductByCategory()
                  case 2:
-                     Library.Display
-                 case 4:pass
-                   
+                     os.system("cls")
+                     Library.Display()
+                 case 4:
+                    os.system("cls")
+                    main_project ()                   
                  case _:
                      print("Invalid choice.")
                 
@@ -159,6 +163,7 @@ def main():
                     os.system("cls")
                     Library.SearchEmployee()
                 case 4:
+                    os.system("cls")
                     employeeid=int(input("enter the employee id:"))
                     found=False
                     for Employees in Library.Employees:
@@ -241,7 +246,24 @@ def main():
                     break
                 case _:print("out of the scope,please try againe:")
     
-
+    def  Sales_process():
+         
+         while True:
+             PrintSalesMenu()
+             choice = int(input("Enter Your Choice: "))
+             match choice:
+                 case 1:
+                      Library.CreatSale()
+                 case 2:
+                    pass
+                 case 3:
+                    pass
+                 case 4:
+                    main_project()                 
+                 case _:
+                     print("Invalid choice.")
+  
+  
     def main_project():
         
         
@@ -260,7 +282,7 @@ def main():
                 employee_process()
             case 4:
                 os.system("cls")
-                PrintSalesMenu()
+                Sales_process()
             case 5:
                 os.system("cls")
                 Report_process()
