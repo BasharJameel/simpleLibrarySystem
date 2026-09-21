@@ -113,21 +113,21 @@ def main():
 
 
     def  category_process():
-        
-        while True:
-            PrintCategoryMenu()
-            choice = int(input("Enter Your Choice: "))
-            match choice:
-                case 1:
-                    Library.AddCategory()
-                case 3:
-                    Library.DisplayProductByCategory()
-                case 2:
-                    Library.Display
-                case 4:pass
-                  
-                case _:
-                    print("Invalid choice.")
+         
+         while True:
+             PrintCategoryMenu()
+             choice = int(input("Enter Your Choice: "))
+             match choice:
+                 case 1:
+                     Library.AddCategory()
+                 case 3:
+                     Library.DisplayProductByCategory()
+                 case 2:
+                     Library.Display
+                 case 4:pass
+                   
+                 case _:
+                     print("Invalid choice.")
                 
         
     def employee_process():
