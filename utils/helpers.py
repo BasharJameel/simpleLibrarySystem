@@ -1,4 +1,4 @@
-from models import employee
+from models import employee 
 from models import store
 
 
@@ -114,7 +114,9 @@ def LoadEmployee(Library):
             phone = data[3]
             salary = float(data[4])
 
-            Library.AddEmployee(employee_id,name,phone,salary )
+            Library.AddEmployee(employee_id,name,phone,salary)
+
+            
    
 
         

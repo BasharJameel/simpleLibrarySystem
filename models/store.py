@@ -14,9 +14,6 @@ class Store:
         self.products=[]
         self.Employees=[]
         self.sales= []
-        self.EmployeeCount=0
-        self.ProductCount=0
-        self.SalasProduct=0
 
     def AddEmployee(self, Employee_id, name, phone, salary, jobs=1):
          print(jobs)
@@ -64,7 +61,7 @@ class Store:
         print("            Display Category          ")
         print("--------------------------------------")
         for Cate in self.Category:
-            print(f"----{Cate.name}----")
+            print(f"-   {Cate.name}")
 
 
     def DisplayProductByCategory(self):
@@ -75,10 +72,11 @@ class Store:
          for Cate in self.Category:
          
            print(f"----{Cate.name}----")
+           
   
            for product in self.products:
            
-             if (product.category == Cate):
+             if (product.category == Cate.name):
                   print(f"-{product.name}")
         
     def DisplayProduct(self):

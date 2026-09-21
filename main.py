@@ -69,7 +69,7 @@ def main():
                         if (str(product.product_id)==SearchedProduct):
                              price=int(input("Enter the new price"))
                              product.update_price(price)
-                             print("the price has been change")
+                             print("the product has been change")
                              i=0
                         if (i):
                              print("there is no product has this id")
@@ -119,13 +119,17 @@ def main():
             choice = int(input("Enter Your Choice: "))
             match choice:
                 case 1:
+                    os.system("cls")
                     Library.AddCategory()
-                case 3:
-                    Library.DisplayProductByCategory()
                 case 2:
-                    Library.Display
-                case 4:pass
-                  
+                    os.system("cls")
+                    Library.DisplayCategory()    
+                case 3:
+                    os.system("cls")
+                    Library.DisplayProductByCategory()   
+                case 4:
+                    os.system("cls")
+                    main_project()    
                 case _:
                     print("Invalid choice.")
                 
