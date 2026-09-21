@@ -226,7 +226,7 @@ def main():
                     print("=================================================")
                 case 2:
                     os.system("cls")
-                    print("================Porduct Report==================")
+                    print("================Employee Report==================")
                     print(f"Total Employee: {len(Library.Employees)}\n")
                     print("Empoyee list :\n")
                     print(f" {'Name' :<20}{'Role' :<15}")
