@@ -103,14 +103,17 @@ class Store:
             print("There is no product has this id")
                
 
-    def SearchEmployee(self,SearchedEmployee):
+    def SearchEmployee(self):
         SearchedEmployee=input("Enter  Employee ID That you wante to Search aboute")
-
+        found =False
+    
         for Employee in self.Employees:
           
-            if (Employee.id==SearchedEmployee):
-                Employee.display_info()
-
+            if (str(Employee.employee_id)==SearchedEmployee):
+                 Employee.display_info()
+                 found=True
+        if not found:
+            print("there is no such this id")
     def DisplaySales(self,SearchSale):
         SearchSale=input("Enter  Salae ID That you wante to Delete it >")
 

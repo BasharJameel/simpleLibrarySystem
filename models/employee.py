@@ -77,37 +77,28 @@ class Storekeeper(Employee):
     def __init__(self, employee_id, name, phone, salary):
         super().__init__(employee_id, name, phone, salary)
 
-
 def create_employee():
-      print("\nChoose employee type:")
-      print("1. Manager")
-      print("2. Cashier")
-      print("3. Storekeeper")
-      jobs = input("Enter choice (1-3): ")
-      employee_id = int(input("Employee ID: "))
-      name = input("Name: ")
-      phone = input("Phone: ")
-      salary = float(input("Salary: "))
-      data =[ employee_id, name, jobs, phone, salary]
+     print("\nChoose employee type:")
+     print("1. Manager")
+     print("2. Cashier")
+     print("3. Storekeeper")
+     jobs = input("Enter choice (1-3): ")
 
-      return data
+     employee_id = int(input("Employee ID: "))
+     name = input("Name: ")
+     phone = input("Phone: ")
+     salary = float(input("Salary: "))
+
+     data =[ employee_id, name, phone, salary, jobs]
+
+     return data
+
+
+
 
 if __name__ == "__main__":
 
-    def create_employee():
-        print("\nChoose employee type:")
-        print("1. Manager")
-        print("2. Cashier")
-        print("3. Storekeeper")
-        jobs = input("Enter choice (1-3): ")
-
-        employee_id = int(input("Employee ID: "))
-        name = input("Name: ")
-        phone = input("Phone: ")
-        salary = float(input("Salary: "))
-        data =[ employee_id, name, phone, salary]
-
-        return data
+  
 
 
     employees = []

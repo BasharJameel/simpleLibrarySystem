@@ -106,6 +106,8 @@ def main():
                     main_project()            
                     break
                 case _:print("out of the scope,please try againe:")
+
+                
             print("----------------------------\n")
             PrintProductMenu()
             choice=int(input("enter another choice:"))
@@ -148,7 +150,7 @@ def main():
                      os.system("cls")
                      info =create_employee()
                    # info =[ employee_id, name, jobs, phone, salary]
-                     Library.AddEmployee(info[0],info[1],info[3], info[4],info[2])
+                     Library.AddEmployee(info[0],info[1], info[3],info[4],info[2])
                      print("employee Created .")
                      i=input("do you wante to enter another Employee Y/N")
                    
