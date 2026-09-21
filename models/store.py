@@ -38,9 +38,9 @@ class Store:
     def CreatSale(self, Employee, payment):
         sale1 =sale(Employee,payment)
 
-        sale.create_saleitem()
-
-        process_payment(sale.calculate_total())
+        sale1.create_saleitem()
+    
+        payment.process_payment(sale.calculate_total())
 
 
         

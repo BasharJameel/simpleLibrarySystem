@@ -9,9 +9,10 @@ class sale:
         self.sale_id=sale.counter
         sale.counter+=1
         self.date=date.today()
+        self.payment=payment
         self.employee=employee#add the متغير from main ||||this must be a obj
         self.total=0
-        self.items=[]
+        self.items=[] #      قائمة تخزن المنتجات التي تم بيعها 
           #%***% is Ammar make this a objct
 
     
@@ -56,7 +57,7 @@ class sale:
         while True:
             product_id=input("enter the product id:\n")#we can develop this part by make the parmete is OBj
             quantity=int(input("enter the quantity\n"))
-            total_item=saleitem.calculate_subtotal()
+            total_item=item.calculate_subtotal()
             item =saleitem(product_id,quantity,total_item)
             self.add_item(item)
 
