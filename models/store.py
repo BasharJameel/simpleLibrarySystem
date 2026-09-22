@@ -1,4 +1,4 @@
-from models.sale import sale
+from models.sale import sale,create_saleitem, calculate_total
 from models.employee import Employee
 from models.saleitem import saleitem
 from models.category import Category
@@ -32,19 +32,17 @@ class Store:
        self.products.append(Product( ID, Name, Price, Categories, Description, Status ))
      
 
-    def CreatSale(self, Employee, payment):
-        sale1 =sale(Employee,payment)
+    def CreatSale(self, Employee):
+        listSale =create_saleitem(self.products)
+        total_sale=calculate_total(listSale) 
+        payment=process_payment(total_sale)
 
-        sale.create_saleitem()
+        sale2=sale(Employee,payment,listSale,total_sale)
+        sale2.display_sale("Ahmed",self.products)
+        self.sales.append(sale2)
+    
 
-        process_payment(sale.calculate_total())
-
-
-        
-        
-
-        self.sales.append(sale(Employee))
-      
+    
 
     def AddCategory(self):
         print("="*10)
@@ -114,12 +112,12 @@ class Store:
                  found=True
         if not found:
             print("there is no such this id")
-    def DisplaySales(self,SearchSale):
-        SearchSale=input("Enter  Salae ID That you wante to Delete it >")
+    def DisplaySale(self):
+        SearchSale=input("Enter  Salae ID That you wante to search it :")
 
         for Sales in self.sales:
-            if (Sales.id==SearchSale):
-                Sales.display_sale()
+            if (str(Sales.sale_id)==str(SearchSale)):
+                 Sales.display_sale("Ahmed",self.products)
 
 
 

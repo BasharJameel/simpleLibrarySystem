@@ -64,9 +64,8 @@ def PrintSalesMenu():
     print("            Sales Menu               ")
     print("=====================================")
     print("1. New Sale")
-    print("2. Display Sales")
-    print("3. Search Sale")
-    print("4. Back")
+    print("2. Search Sales")
+    print("3. Back")
 
 
 def PrintReportsMenu():

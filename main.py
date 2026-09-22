@@ -206,6 +206,24 @@ def main():
 
                 
     
+
+    def  Sales_process():
+        
+        while True:
+            PrintSalesMenu()
+            choice = int(input("Enter Your Choice: "))
+            match choice:
+                case 1:
+                    os.system("cls")
+                    Library.CreatSale("Ahmed")
+                case 2:
+                    os.system("cls")
+                    Library.DisplaySale()
+                case 3:
+                    os.system("cls")
+                    main_project() 
+                case _:
+                    print("Invalid choice.")
     def Report_process():
         
 
@@ -246,6 +264,7 @@ def main():
                     main_project()
                     break
                 case _:print("out of the scope,please try againe:")
+
     
 
     def main_project():
@@ -266,7 +285,7 @@ def main():
                 employee_process()
             case 4:
                 os.system("cls")
-                PrintSalesMenu()
+                Sales_process()
             case 5:
                 os.system("cls")
                 Report_process()

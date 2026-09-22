@@ -5,13 +5,15 @@ from models.payment import payment
 from datetime import date
 class sale:
     counter=1
-    def __init__(self,employee,payment):
+    def __init__(self,employee,payment,items,total):
         self.sale_id=sale.counter
         sale.counter+=1
         self.date=date.today()
         self.employee=employee#add the متغير from main ||||this must be a obj
-        self.total=0
-        self.items=[]
+        self.total=total
+        self.items=items
+        self.payment=payment
+
           #%***% is Ammar make this a objct
 
     
@@ -27,44 +29,62 @@ class sale:
             else:
                 print("error item")
 
-    def calculate_total(self):
-        self.total=0
-        for item in self.items:
-            self.total+=item.calculate_subtotal()
-        return self.total
+    # def calculate_total(self):
+    #     self.total=0
+    #     for item in self.items:
+    #         total+=item.calculate_subtotal()
+    #     return total
     
 
-    def display_sale(self,employee):
+    def display_sale(self,employee,product):
+
+        print("\n \n =========================")
         print(f"sale_id:{self.sale_id}")
         print(f"date:{self.date}")
         print(f"employee: {self.employee}")
         print("---------------------------------------------")
-        for i, item in enumerate(self.items, start=1):
-            print(f"{i}. ", end="")
-            item.display_item()
+        for  item in self.items :        
+               item.display_item(product)
         print("__________________________________________")
-        print(f"total  of sale:{self.calculate_total()}")
+        print(f"total  of sale:{self.total}")
 
         print("$$$$$$$$$$$$$$..PAYMENT..$$$$$$$$$$$$$$$$$$")
-        self.payment.display_payment()
+        print(f"           {self.payment.display_payment()}")
         print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
         
 
-      
+def calcalutSubitem(id ,quantity,productsList):
+    for product in productsList:
+        if str(product.product_id)==str(id):
+            return product.price*quantity
+        
 
-    def create_saleitem(self):
-        while True:
-            product_id=input("enter the product id:\n")#we can develop this part by make the parmete is OBj
-            quantity=int(input("enter the quantity\n"))
-            total_item=saleitem.calculate_subtotal()
-            item =saleitem(product_id,quantity,total_item)
-            self.add_item(item)
 
-            repeat=input("do you want to add another item:")
-            if repeat=="yes" or repeat=="Yes":
-                continue
-            else:
-                break
+
+def create_saleitem(productsList):
+    listItems=[]  
+    while True:
+        product_id=input("enter the product id:\n")#we can develop this part by make the parmete is OBj
+        quantity=int(input("enter the quantity\n"))
+
+        # total_item=saleitem.calculate_subtotal()
+        # item =saleitem(product_id,quantity,total_item)
+        # self.add_item(item)
+        subitem_total=calcalutSubitem(product_id,quantity,productsList)
+        listItems.append(saleitem(product_id, quantity,subitem_total))
+        repeat=input("do you want to add another item Y/N:")
+        if repeat=="y" or repeat=="Y":
+            continue
+        else:
+            break
+    return listItems
+
+def calculate_total(items):
+        total=0
+        for item in items:
+            print("subtotal=",item.subtotal)
+            total+=item.subtotal
+        return total
 
 
 

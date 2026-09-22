@@ -43,6 +43,36 @@ class payment:
         print(f"method:{self.method}")
         
         
+def  process_payment(total):
+        
+        
+        try:
+            amount=int(input("enter the monay the customer give:"))
+        except ValueError:
+            print("Invalid amount")
+            return
+           
+        if amount<total:
+            still=total-amount
+            print(f"......astill have :{still}")
+            astill1=int(input("..........how mutch does he give you:"))
+            if astill1==still:
+                    print("............DONE")
+        elif amount>total:
+            print(f"you must to give them {amount-total}")
+            
+
+        else:
+            print("DONE")
+
+        method=input("enter the way the customer give you the mony:")
+
+        print(f"amount:{total}")
+        print(f"method:{method}")
+
+        payment1=payment(amount,method)
+
+        return payment1
 
 
                 
